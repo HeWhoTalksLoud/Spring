@@ -9,16 +9,15 @@
 
     <bean id="car"
         class="org.Car"
-        scope="singleton"
+        scope="prototype"
         init-method="init"
         destroy-method="destroy">
 
     </bean>
 
     <bean id="person"
-          class="org.Person">
-        <constructor-arg ref="car"></constructor-arg>
-
+            class="org.Person">
+        <property name="car" ref="car"/>
     </bean>
 
 
